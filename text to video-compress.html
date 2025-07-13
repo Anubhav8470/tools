@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Video Compressor | Convert & Optimize Text to Video Online</title>
+    <meta name="description" content="Free online tool to convert text to video with adjustable compression levels. Optimize your video content for social media with our AI-powered tool.">
+    <meta name="keywords" content="text to video, video compressor, AI video tool, online video maker, free video tool">
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "AI Video Compressor",
+      "url": "https://yourwebsite.com",
+      "description": "Convert text to video with adjustable compression levels",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Web"
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --accent-color: #ea4335;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--light-gray);
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .ad-banner {
+            background-color: #f0f0f0;
+            padding: 10px;
+            text-align: center;
+            margin: 1rem 0;
+            border: 1px dashed #ccc;
+            min-height: 90px;
+        }
+        
+        .tool-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+            min-height: 150px;
+            font-size: 1rem;
+        }
+        
+        .options-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .option-card {
+            flex: 1;
+            min-width: 200px;
+            background-color: var(--light-gray);
+            padding: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .option-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .option-card.selected {
+            border-color: var(--primary-color);
+            background-color: rgba(66, 133, 244, 0.1);
+        }
+        
+        .option-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 0 auto;
+            font-weight: 600;
+        }
+        
+        button:hover {
+            background-color: #3367d6;
+        }
+        
+        .result-container {
+            margin-top: 2rem;
+            display: none;
+        }
+        
+        .video-preview {
+            width: 100%;
+            background-color: #000;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        
+        .video-stats {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-card {
+            flex: 1;
+            min-width: 150px;
+            background-color: var(--light-gray);
+            padding: 1rem;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .stat-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .download-btn {
+            background-color: var(--secondary-color);
+        }
+        
+        .download-btn:hover {
+            background-color: #2d9249;
+        }
+        
+        footer {
+            background-color: var(--dark-gray);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 2rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .options-group {
+                flex-direction: column;
+            }
+            
+            .option-card {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">AI Video Compressor</div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">How It Works</a>
+                <a href="#">Pricing</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- Top Ad Banner -->
+        <div class="ad-banner">
+            <!-- Replace with your AdSense code -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"></script>
+            <!-- Top Banner Ad -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                 data-ad-slot="YOUR_AD_SLOT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <div class="tool-container">
+            <h1>Text to Video Compression Tool</h1>
+            
+            <div class="input-group">
+                <label for="text-input">Enter your text to convert to video:</label>
+                <textarea id="text-input" placeholder="Type or paste your text here..."></textarea>
+            </div>
+            
+            <div class="input-group">
+                <label>Select compression level:</label>
+                <div class="options-group">
+                    <div class="option-card selected" data-level="high">
+                        <h3>High Quality</h3>
+                        <p>Best resolution (larger file size)</p>
+                    </div>
+                    <div class="option-card" data-level="medium">
+                        <h3>Balanced</h3>
+                        <p>Good quality with medium file size</p>
+                    </div>
+                    <div class="option-card" data-level="low">
+                        <h3>Maximum Compression</h3>
+                        <p>Small file size (lower quality)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="generate-btn">Generate Video</button>
+            
+            <!-- Middle Ad Banner -->
+            <div class="ad-banner" style="margin: 2rem 0;">
+                <!-- Replace with your AdSense code -->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"></script>
+                <!-- Content Ad -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            
+            <div class="result-container" id="result-container">
+                <h2>Your Compressed Video</h2>
+                <div class="video-preview">
+                    <!-- Video will be inserted here by JavaScript -->
+                </div>
+                
+                <div class="video-stats">
+                    <div class="stat-card">
+                        <h4>Original Size</h4>
+                        <p id="original-size">--</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Compressed Size</h4>
+                        <p id="compressed-size">--</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Reduction</h4>
+                        <p id="reduction">--</p>
+                    </div>
+                </div>
+                
+                <button class="download-btn">Download Video</button>
+            </div>
+        </div>
+        
+        <!-- Bottom Ad Banner -->
+        <div class="ad-banner">
+            <!-- Replace with your AdSense code -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"></script>
+            <!-- Bottom Banner Ad -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                 data-ad-slot="YOUR_AD_SLOT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+            </div>
+            <p>&copy; 2023 AI Video Compressor. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Select compression level
+        const optionCards = document.querySelectorAll('.option-card');
+        optionCards.forEach(card => {
+            card.addEventListener('click', () => {
+                optionCards.forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+            });
+        });
+        
+        // Generate video button
+        document.getElementById('generate-btn').addEventListener('click', function() {
+            const textInput = document.getElementById('text-input').value;
+            const selectedLevel = document.querySelector('.option-card.selected').dataset.level;
+            
+            if (!textInput.trim()) {
+                alert('Please enter some text to convert to video');
+                return;
+            }
+            
+            // Show loading state
+            this.textContent = 'Processing...';
+            this.disabled = true;
+            
+            // Simulate processing delay (in a real app, this would call an API)
+            setTimeout(() => {
+                // Reset button
+                this.textContent = 'Generate Video';
+                this.disabled = false;
+                
+                // Show results
+                const resultContainer = document.getElementById('result-container');
+                resultContainer.style.display = 'block';
+                
+                // Update stats (simulated)
+                document.getElementById('original-size').textContent = '15.2 MB';
+                document.getElementById('compressed-size').textContent = 
+                    selectedLevel === 'high' ? '12.1 MB' : 
+                    selectedLevel === 'medium' ? '8.4 MB' : '3.7 MB';
+                
+                document.getElementById('reduction').textContent = 
+                    selectedLevel === 'high' ? '20% smaller' : 
+                    selectedLevel === 'medium' ? '45% smaller' : '75% smaller';
+                
+                // In a real implementation, you would insert the actual video here
+                const videoPreview = document.querySelector('.video-preview');
+                videoPreview.innerHTML = `
+                    <div style="color: white; text-align: center; padding: 2rem;">
+                        <h3>Video Preview Placeholder</h3>
+                        <p>In a real implementation, your generated video would appear here</p>
+                        <p>Compression level: ${selectedLevel}</p>
+                    </div>
+                `;
+                
+                // Scroll to results
+                resultContainer.scrollIntoView({ behavior: 'smooth' });
+                
+            }, 2000);
+        });
+        
+        // Download button
+        document.querySelector('.download-btn')?.addEventListener('click', function() {
+            alert('In a real implementation, this would download your video');
+        });
+    </script>
+</body>
+</html>
